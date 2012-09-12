@@ -1,6 +1,5 @@
 *.o
 *.a
 *~
-test
 sample1_unittest
 build/*
