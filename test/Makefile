@@ -17,7 +17,7 @@ $(GTEST_MAINA):
 	cd $(GOOGLE_TEST)/make; make
 
 clean:
-	rm -f stack
+	rm -f stack_test
 	cd $(GOOGLE_TEST)/make; $(MAKE) clean
 
 

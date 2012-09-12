@@ -1,4 +1,5 @@
 #include "Stack.h"
+#include <iostream>
 
 Stack::Stack(int initialSize) {
   theStack = new int[initialSize];
@@ -6,10 +7,15 @@ Stack::Stack(int initialSize) {
 }
 
 Stack::~Stack() {
-
+  delete[] theStack;
 }
 
 void Stack::push(int value) {
+  //if theStack is full
+  // create new stack twice as big
+  // copy all elements to new stack
+  // delete old stack
+  // point old stack pointer to new stack
   theStack[top] = value;
   top++;
 }
