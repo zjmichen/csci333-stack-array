@@ -11,7 +11,7 @@ CPP = g++
 CPPFLAGS = -Wall -Wextra
 
 stack: Stack.cpp $(SRC)/Stack.o $(GTEST_MAINA)
-	$(CPP) $(CFLAGS) $(GTEST_INCLUDES) -o stack $^
+	$(CPP) $(CFLAGS) $(GTEST_INCLUDES) -o stack_test $^
 
 $(GTEST_MAINA):
 	cd $(GOOGLE_TEST)/make; make
