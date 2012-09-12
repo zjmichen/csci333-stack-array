@@ -6,11 +6,15 @@ SRC = src
 CPP = g++
 CPPFLAGS = -Wall -Wextra
 
-all:
-	cd $(SRC); make
+all: src test
+
+src: $(SRC)/Stack.o
+	cd $(SRC); $(MAKE)
+
+test: $(SRC)/Stack.o
+	cd $(TEST); $(MAKE)
 
 clean:
-	rm -f $(BUILD)/*
-	rm -f $(SRC)/*.o
-	$(MAKE) all
+	cd $(SRC); $(MAKE) clean
+	cd $(TEST); $(MAKE) clean
 
