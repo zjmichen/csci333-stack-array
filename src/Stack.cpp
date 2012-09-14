@@ -2,6 +2,7 @@
 #include <iostream>
 
 Stack::Stack(int initialSize) {
+  maxSize = initialSize;
   theStack = new int[initialSize];
   top = 0;
 }
@@ -12,10 +13,21 @@ Stack::~Stack() {
 
 void Stack::push(int value) {
   //if theStack is full
-  // create new stack twice as big
-  // copy all elements to new stack
-  // delete old stack
-  // point old stack pointer to new stack
+  if (top == maxSize) {
+	// create new stack twice as big
+	int* newStack = new int[maxSize*2];
+	// copy all elements to new stack
+	for (int i = 0; i < maxSize; ++i) {
+		newStack[i] = theStack[i];
+	}
+
+	// delete old stack
+	delete theStack;
+	// point old stack pointer to new stack
+	theStack = newStack;
+  
+  }
+
   theStack[top] = value;
   top++;
 }

@@ -4,6 +4,7 @@
 class Stack {
  private:
   int* theStack;
+  int maxSize;
   int top;
 
  public:
